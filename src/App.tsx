@@ -1,5 +1,11 @@
+import Main from "./components/Main";
+
 function App() {
-  return <div className=" text-green-600"> </div>;
+  return (
+    <div className=" ">
+      <Main />
+    </div>
+  );
 }
 
 export default App;

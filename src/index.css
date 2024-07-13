@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.main-bg {
+  background-image: url("../src/assets/images/MainBG.png");
+}
+
+@font-face {
+  font-family: "Advent-Pro-Bold";
+  src: url("./assets/fonts/advent-pro.bold.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Advent-Pro-Regular";
+  src: url("./assets/fonts/advent-pro.regular.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Advent-Pro-SemiBold";
+  src: url("./assets/fonts/advent-pro.semibold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Paladins-Condensed";
+  src: url("./assets/fonts/paladinscond.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Paladins-Straight";
+  src: url("./assets/fonts/paladinsstraight.ttf") format("opentype");
+}
