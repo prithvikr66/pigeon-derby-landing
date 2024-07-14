@@ -11,6 +11,7 @@ import Utility from "./Utility";
 import HowItWorks from "./HowItWorks";
 import Nfts from "./Nfts";
 import Team from "./Team";
+import Footer from "./Footer";
 const Main = () => {
   const clickAnimation = {
     scale: 0.9,
@@ -103,6 +104,7 @@ const Main = () => {
       <HowItWorks />
       <Nfts />
       <Team />
+      <Footer />
     </div>
   );
 };

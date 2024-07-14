@@ -15,11 +15,11 @@ const Team = () => {
           </div>
           <img src={TeamImage} className=" w-[90%] mx-auto h-auto mt-[40px]" />
           <div className=" mt-[40px]">
-            <p className=" font-advent-bold uppercase text-white text-center text-[24px]">
+            <p className=" font-advent-bold uppercase text-white text-center text-[20px] lg:text-[24px]">
               5 experienced devs + 20 kols + 3 agencies +{" "}
               <span className="text-[#FFFF00]">50 billion birds</span>{" "}
             </p>
-            <p className=" font-advent-bold uppercase text-white text-center text-[24px]">
+            <p className=" font-advent-bold uppercase text-white text-center text-[20px] lg:text-[24px]">
               keep your girl safe, lmao{" "}
             </p>
           </div>
