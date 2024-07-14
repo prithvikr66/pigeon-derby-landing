@@ -150,11 +150,126 @@ const GetPresaleIcon = () => {
   );
 };
 
-// const RingIcon = () => {
-  
-//   return (
-    
-//   );
-// };
-
-export { PlayNowButtonIcon, GetPresaleIcon };
+const NftsIcon = ({ small }: { small: boolean }) => {
+  return (
+    <svg
+      width="216"
+      height="87"
+      viewBox="0 0 216 87"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g filter="url(#filter0_d_1305_4572)">
+        <line
+          x1="26.5"
+          y1="0.5"
+          x2="205.5"
+          y2="0.5"
+          stroke="#F01E31"
+          stroke-linecap="round"
+        />
+        <line
+          x1="26.5"
+          y1="76.5"
+          x2="205.5"
+          y2="76.5"
+          stroke="#F01E31"
+          stroke-linecap="round"
+        />
+        <line
+          x1="0.5"
+          y1="11.5"
+          x2="0.49999"
+          y2="66.5"
+          stroke="#F01E31"
+          stroke-linecap="round"
+        />
+      </g>
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        className={` font-paladins-straight ${
+          small ? "text-[20px]" : "text-[40px]"
+        } text-[#F01E31] fill-current uppercase`}
+      >
+        NFT<tspan className=" text-white fill-current">S</tspan>
+      </text>
+      <defs>
+        <filter
+          id="filter0_d_1305_4572"
+          x="0"
+          y="0"
+          width="216"
+          height="87"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset dx="8" dy="8" />
+          <feGaussianBlur stdDeviation="1" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0.941176 0 0 0 0 0.117647 0 0 0 0 0.192157 0 0 0 1 0"
+          />
+          <feBlend
+            mode="normal"
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_1305_4572"
+          />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="effect1_dropShadow_1305_4572"
+            result="shape"
+          />
+        </filter>
+      </defs>
+    </svg>
+  );
+};
+const QrCodeIcon = () => {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_1255_977)">
+        <path d="M3.5 3.5H7V7H3.5V3.5Z" fill="white" />
+        <path
+          d="M10.5 0V10.5H0V0H10.5ZM8.75 1.75H1.75V8.75H8.75V1.75ZM7 21H3.5V24.5H7V21Z"
+          fill="white"
+        />
+        <path
+          d="M10.5 17.5V28H0V17.5H10.5ZM1.75 19.25V26.25H8.75V19.25H1.75ZM21 3.5H24.5V7H21V3.5Z"
+          fill="white"
+        />
+        <path
+          d="M17.5 0V10.5H28V0H17.5ZM26.25 1.75V8.75H19.25V1.75H26.25ZM14 1.75V0H15.75V3.5H14V7H12.25V1.75H14ZM14 10.5V7H15.75V10.5H14ZM10.5 14V12.25H12.25V10.5H14V14H15.75V12.25H24.5V14H17.5V15.75H12.25V14H10.5ZM10.5 14V15.75H3.5V14H1.75V15.75H0V12.25H5.25V14H10.5ZM28 15.75H26.25V12.25H28V15.75ZM26.25 15.75H24.5V19.25H28V17.5H26.25V15.75ZM19.25 15.75H22.75V17.5H21V19.25H19.25V15.75ZM22.75 21V19.25H21V21H19.25V22.75H15.75V24.5H21V21H22.75ZM22.75 21H28V22.75H24.5V24.5H22.75V21ZM15.75 19.25V21H17.5V17.5H12.25V19.25H15.75Z"
+          fill="white"
+        />
+        <path
+          d="M12.25 21H14V26.25H21V28H12.25V21ZM28 24.5V28H22.75V26.25H26.25V24.5H28Z"
+          fill="white"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1255_977">
+          <rect width="28" height="28" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+export { PlayNowButtonIcon, GetPresaleIcon, NftsIcon, QrCodeIcon };

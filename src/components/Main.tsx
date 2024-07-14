@@ -9,6 +9,7 @@ import MikeTysonImage from "../assets/images/MikeTysonImage.png";
 import { motion } from "framer-motion";
 import Utility from "./Utility";
 import HowItWorks from "./HowItWorks";
+import Nfts from "./Nfts";
 const Main = () => {
   const clickAnimation = {
     scale: 0.9,
@@ -99,6 +100,7 @@ const Main = () => {
       {/* ------------------- */}
       <Utility />
       <HowItWorks />
+      <Nfts />
     </div>
   );
 };

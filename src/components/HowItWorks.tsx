@@ -21,7 +21,7 @@ const HowItWorks = () => {
               buy tickets
             </h3>
             <p className=" font-advent-semibold  text-[20px] 2xl:text-[24px] text-white uppercase text-center">
-              each round has 100 lottery tickets for sale{" "}
+              each round has 100 lottery tickets for sale.{" "}
               <span className=" text-[#F01E31]">($10 / ticket)</span>
             </p>
           </div>
@@ -33,7 +33,7 @@ const HowItWorks = () => {
             <p className=" font-advent-semibold  text-[20px] 2xl:text-[24px] text-white uppercase text-center">
               the race begins!{" "}
               <span className=" text-[#F01E31]">sit back and watch</span> your
-              pigeon flap to the finish line!
+              pigeon flap to the finish line!.
             </p>
           </div>
 
@@ -43,7 +43,7 @@ const HowItWorks = () => {
             </h3>
             <p className=" font-advent-semibold  text-[20px] 2xl:text-[24px] text-white uppercase text-center">
               the results are <span className=" text-[#F01E31]">probably</span>{" "}
-              fair on the solana blockchain
+              fair on the solana blockchain.
             </p>
           </div>
         </div>
@@ -59,7 +59,7 @@ const HowItWorks = () => {
             buy tickets
           </h3>
           <p className=" font-advent-semibold  text-[16px]  text-white uppercase text-center">
-            each round has 100 lottery tickets for sale{" "}
+            each round has 100 lottery tickets for sale.{" "}
             <span className=" text-[#F01E31]">($10 / ticket)</span>
           </p>
         </div>
@@ -72,7 +72,7 @@ const HowItWorks = () => {
             <p className=" font-advent-semibold  text-[16px] 2xl:text-[24px] text-white uppercase text-center">
               the race begins!{" "}
               <span className=" text-[#F01E31]">sit back and watch</span> your
-              pigeon flap to the finish line!
+              pigeon flap to the finish line!.
             </p>
         </div>
         <div>
@@ -83,7 +83,7 @@ const HowItWorks = () => {
             </h3>
             <p className=" font-advent-semibold  text-[16px] 2xl:text-[24px] text-white uppercase text-center">
               the results are <span className=" text-[#F01E31]">probably</span>{" "}
-              fair on the solana blockchain
+              fair on the solana blockchain.
             </p>
         </div>
        </div>
