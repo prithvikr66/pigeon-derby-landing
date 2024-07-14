@@ -8,6 +8,7 @@ import MikeTysonImage from "../assets/images/MikeTysonImage.png";
 // import Landing4Image from "../assets/images/Landing4.png";
 import { motion } from "framer-motion";
 import Utility from "./Utility";
+import HowItWorks from "./HowItWorks";
 const Main = () => {
   const clickAnimation = {
     scale: 0.9,
@@ -97,6 +98,7 @@ const Main = () => {
 
       {/* ------------------- */}
       <Utility />
+      <HowItWorks />
     </div>
   );
 };
