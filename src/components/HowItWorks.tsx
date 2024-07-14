@@ -12,7 +12,7 @@ const HowItWorks = () => {
       <div className=" lg:hidden flex justify-center">
         <Heading heading="How it works" small={true} />
       </div>
-      <div className=" h-[5px] lg:h-[8px] mx-auto lg:mx-0 w-[150px] mt-[-5px] lg:mt-0 bg-[#FFFF00] rounded-tr-[8px] rounded-bl-[8px]" />
+      <div className="  h-[5px] lg:h-[8px] mx-auto lg:mx-0 w-[150px] mt-[-5px] lg:mt-0 bg-[#FFFF00] rounded-tr-[8px] rounded-bl-[8px]" />
       <div className=" hidden lg:block mt-[50px]">
         <img src={HowItWorksImage} className=" w-[90%] mx-auto h-auto " />
         <div className=" flex w-full gap-[50px] justify-between">

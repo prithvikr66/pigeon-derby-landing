@@ -13,8 +13,8 @@ const Nfts = () => {
       <div className=" lg:hidden flex justify-center">
         <NftsIcon small />
       </div>
-      <div className=" flex  flex-col lg:flex-row mt-[40px] ">
-        <div className=" w-[70%] mx-auto lg:mx-0 lg:w-[24%]  relative">
+      <div className=" flex  flex-col lg:flex-row mt-[50px] ">
+        <div className=" w-[70%] mx-auto lg:mx-0 lg:w-[24%] sm:w-[250px]  relative">
           <img src={NFTFrameImage} className=" w-full h-auto" />
           <div className=" absolute inset-0 top-[80px]">
             <img src={PigeonNFT} className=" w-[70%] mx-auto" />
@@ -33,8 +33,8 @@ const Nfts = () => {
           </div>
         </div>
         <div className=" w-[80%] lg:w-[49%] flex items-center flex-col  mx-auto gap-[50px] mt-[100px] lg:mt-[-130px]">
-          <img src={NFTProgressImage} className=" w-[50%] lg:w-[25%] h-auto" />
-          <img src={NFTCollectionImage} className=" w-[100%] lg:w-[80%] " />
+          <img src={NFTProgressImage} className=" w-[50%] lg:w-[25%] h-auto sm:w-[150px]" />
+          <img src={NFTCollectionImage} className=" w-[100%] lg:w-[80%] sm:w-[400px]" />
           <div className=" lg:w-[80%] mx-auto ">
             <div className=" w-full h-[20px] bg-[#F01E31] shadow-md shadow-[#F01E31] rounded-[200px]">
               <div className=" w-[70%] h-full bg-[#FFFF00] rounded-[200px]"></div>
@@ -50,7 +50,7 @@ const Nfts = () => {
             </div>
           </div>
         </div>
-        <div className=" mt-[40px] lg:mt-0 w-[70%] mx-auto lg:mx-0  lg:w-[24%] relative">
+        <div className=" mt-[40px] lg:mt-0 w-[70%] mx-auto lg:mx-0  lg:w-[24%] sm:w-[250px] relative">
           <img src={NFTFrameImage} className=" w-full h-auto" />
           <div className=" absolute inset-0 top-[80px]">
             <img src={EagleNFT} className=" w-[70%] mx-auto" />

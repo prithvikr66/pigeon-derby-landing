@@ -1,11 +1,12 @@
 import BackgroundImageMain from "../assets/images/MainBG.png";
 import WebsiteLogo from "../assets/images/Logo.png";
-import { GetPresaleIcon, PlayNowButtonIcon } from "./Icons";
+import {
+  GetPresaleIcon,
+  GetPresaleIconSmall,
+  PlayNowButtonIcon,
+  PlayNowButtonIconSmall,
+} from "./Icons";
 import MikeTysonImage from "../assets/images/MikeTysonImage.png";
-// import Landing1Image from "../assets/images/Landing1.png";
-// import Landing2Image from "../assets/images/Landing2.png";
-// import Landing3Image from "../assets/images/Landing3.png";
-// import Landing4Image from "../assets/images/Landing4.png";
 import { motion } from "framer-motion";
 import Utility from "./Utility";
 import HowItWorks from "./HowItWorks";
@@ -35,7 +36,7 @@ const Main = () => {
 
           <div className=" lg:flex  items-center  gap-[80px] hidden   ">
             <motion.button
-              className=" cursor-pointer mt-[-10px]"
+              className=" cursor-pointer mt-[-10px] "
               whileTap={clickAnimation}
             >
               <PlayNowButtonIcon />
@@ -66,15 +67,30 @@ const Main = () => {
         </div>
       </div>
       <div className="lg:hidden mt-[20px] flex flex-col items-center">
-        <motion.button className=" cursor-pointer" whileTap={clickAnimation}>
+        <motion.button
+          className=" cursor-pointer  hidden sm:block
+        "
+          whileTap={clickAnimation}
+        >
           <PlayNowButtonIcon />
         </motion.button>
-
         <motion.button
-          className=" cursor-pointer mt-[0px]"
+          className=" cursor-pointer  sm:hidden "
+          whileTap={clickAnimation}
+        >
+          <PlayNowButtonIconSmall />
+        </motion.button>
+        <motion.button
+          className=" cursor-pointer mt-[0px] hidden sm:block"
           whileTap={clickAnimation}
         >
           <GetPresaleIcon />
+        </motion.button>
+        <motion.button
+          className=" cursor-pointer mt-[10px] sm:hidden"
+          whileTap={clickAnimation}
+        >
+          <GetPresaleIconSmall />
         </motion.button>
 
         <div>
@@ -91,19 +107,13 @@ const Main = () => {
         </div>
       </div>
 
-      {/* --------------------------------------------- */}
-      {/* <div className=" flex w-full">
-        <img src={Landing1Image} className=" w-full h-auto hover:scale-110" />
-        <img src={Landing2Image}  className=" w-full h-auto hover:scale-110"/>
-        <img src={Landing3Image}  className=" w-full h-auto hover:scale-110"/>
-        <img src={Landing4Image}  className=" w-full h-auto hover:scale-110"/>
-      </div> */}
-
       {/* ------------------- */}
-      <Utility />
-      <HowItWorks />
-      <Nfts />
-      <Team />
+      <div className=" flex flex-col gap-[50px]">
+        <Utility />
+        <HowItWorks />
+        <Nfts />
+        <Team />
+      </div>
       <Footer />
     </div>
   );
