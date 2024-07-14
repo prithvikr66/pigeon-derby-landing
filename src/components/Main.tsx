@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import Utility from "./Utility";
 import HowItWorks from "./HowItWorks";
 import Nfts from "./Nfts";
+import Team from "./Team";
 const Main = () => {
   const clickAnimation = {
     scale: 0.9,
@@ -101,6 +102,7 @@ const Main = () => {
       <Utility />
       <HowItWorks />
       <Nfts />
+      <Team />
     </div>
   );
 };
