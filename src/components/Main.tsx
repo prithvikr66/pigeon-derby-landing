@@ -18,11 +18,35 @@ import SniperGIF from "../assets/images/Snipe.gif";
 import RocketGIF from "../assets/images/Cannon.gif";
 import ScoreboardGIF from "../assets/images/Score.gif";
 import Backdrop from "../assets/images/BlackBackdrop.png";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+
 const Main = () => {
   const clickAnimation = {
     scale: 0.9,
     transition: { type: "spring", stiffness: 400, damping: 10 },
   };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    centerMode: true,
+    centerPadding: '0',
+  };
+
+  const slides = [
+    { image: EagleGIF, title: 'AMERICAN EAGLE' },
+    { image: SniperGIF, title: 'SNIPERS' },
+    { image: RocketGIF, title: 'ROCKET' },
+    { image: ScoreboardGIF, title: 'SCOREBOARD' },
+  ];
 
   return (
     <div className=" min-h-screen bg-[#111111]">
@@ -42,14 +66,12 @@ const Main = () => {
           <div className=" lg:flex  items-center  gap-[80px] hidden   ">
             <motion.button
               className=" cursor-pointer mt-[-10px] hover:scale-110 "
-              // whileTap={clickAnimation}
             >
               <PlayNowButtonIcon />
             </motion.button>
 
             <motion.button
               className=" cursor-pointer mt-[0px]"
-              // whileTap={clickAnimation}
             >
               <GetPresaleIcon />
             </motion.button>
@@ -112,7 +134,10 @@ const Main = () => {
         </div>
       </div>
       {/* --------------------------- */}
-      <img className=" w-full lg:h-[100px] xl:h-[150px]  2xl:h-[200px] " src={Backdrop} />
+      <img
+        className=" w-full h-[50px] lg:h-[100px] xl:h-[150px]  2xl:h-[200px] "
+        src={Backdrop}
+      />
       {/* --------------------------- */}
 
       <div className=" hidden lg:block w-full">
@@ -157,6 +182,24 @@ const Main = () => {
         </div>
       </div>
 
+      <div className="  lg:hidden w-full">
+      <Slider {...settings} className="w-full ">
+        {slides.map((slide, index) => (
+          <div key={index} className="slider-card w-[60%] px-[50px] sm:w-[300px]">
+            <div className="relative h-[400px]">
+              <img
+                className="w-full h-full object-cover object-center"
+                src={slide.image}
+              />
+              <div className="absolute inset-x-0 bottom-0 h-[15%] bg-black bg-opacity-90 uppercase text-white font-advent-bold text-[30px] flex items-center justify-center">
+                {slide.title}
+              </div>
+            </div>
+          </div>
+        ))}
+      </Slider>
+    </div>
+
       {/* ------------------- */}
       <div className=" flex flex-col gap-[50px]">
         <Utility />
@@ -170,6 +213,3 @@ const Main = () => {
 };
 
 export default Main;
-{
-  (" ");
-}

@@ -5,6 +5,10 @@
 .main-bg {
   background-image: url("../src/assets/images/MainBG.png");
 }
+@import "swiper/swiper-bundle.min.css";
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
 @font-face {
   font-family: "Advent-Pro-Bold";
@@ -26,4 +30,8 @@
 @font-face {
   font-family: "Paladins-Straight";
   src: url("./assets/fonts/paladinsstraight.ttf") format("opentype");
+}
+
+.slider-card {
+  clip-path: polygon(14% 0%, 77% 0%, 100% 23%, 100% 100%, 13% 100%);
 }
