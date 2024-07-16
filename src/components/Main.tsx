@@ -30,21 +30,21 @@ const Main = () => {
         <div className=" w-[80%] mx-auto  absolute inset-0 flex flex-col mt-[60px] justify-end items-center lg:items-start lg:justify-normal ">
           <img src={WebsiteLogo} className=" w-[100px] h-auto" />
           <div className=" text-[36px] lg:text-[96px] font-paladins-condensed lg:mt-[-20px]">
-            <h2 className=" text-[#F01E31]">pigeon</h2>
+            <h2 className=" text-[#F01E31] ">pigeon</h2>
             <h2 className=" text-white mt-[-20px] lg:mt-[-60px] ">derby</h2>
           </div>
 
           <div className=" lg:flex  items-center  gap-[80px] hidden   ">
             <motion.button
-              className=" cursor-pointer mt-[-10px] "
-              whileTap={clickAnimation}
+              className=" cursor-pointer mt-[-10px] hover:scale-110 "
+              // whileTap={clickAnimation}
             >
               <PlayNowButtonIcon />
             </motion.button>
 
             <motion.button
               className=" cursor-pointer mt-[0px]"
-              whileTap={clickAnimation}
+              // whileTap={clickAnimation}
             >
               <GetPresaleIcon />
             </motion.button>
@@ -68,7 +68,7 @@ const Main = () => {
       </div>
       <div className="lg:hidden mt-[20px] flex flex-col items-center">
         <motion.button
-          className=" cursor-pointer  hidden sm:block
+          className=" cursor-pointer  hidden sm:block 
         "
           whileTap={clickAnimation}
         >
@@ -106,6 +106,8 @@ const Main = () => {
           </p>
         </div>
       </div>
+      {/* --------------------------- */}
+
 
       {/* ------------------- */}
       <div className=" flex flex-col gap-[50px]">

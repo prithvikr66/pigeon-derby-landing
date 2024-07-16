@@ -13,7 +13,7 @@ const Team = () => {
           <div className=" hidden lg:block w-[90%] mx-auto">
             <Heading heading="Team" small={false} />
           </div>
-          <img src={TeamImage} className=" w-[90%] mx-auto h-auto mt-[40px]" />
+          <img src={TeamImage} className=" w-[90%] mx-auto h-auto mt-[40px] scale-105" />
           <div className=" mt-[40px]">
             <p className=" font-advent-bold uppercase text-white text-center text-[20px] lg:text-[24px]">
               5 experienced devs + 20 kols + 3 agencies +{" "}

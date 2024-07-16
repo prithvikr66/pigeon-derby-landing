@@ -53,7 +53,7 @@ const HowItWorks = () => {
       <div className=" lg:hidden">
        <div className=" flex flex-col gap-[40px] mt-[40px]">
        <div>
-          <img src={HowItWorksImage1} className=" mx-auto w-[250px]" />
+          <img src={HowItWorksImage1} className=" mx-auto w-[250px]  hover:scale-110" />
 
           <h3 className=" font-paladins-straight text-[#FFFF00] text-[20px]  text-center">
             buy tickets
@@ -64,7 +64,7 @@ const HowItWorks = () => {
           </p>
         </div>
         <div>
-          <img src={HowItWorksImage2} className=" mx-auto w-[250px]" />
+          <img src={HowItWorksImage2} className=" mx-auto w-[250px] hover:scale-110" />
 
           <h3 className=" font-paladins-straight text-[#FFFF00] text-[20px] 2xl:text-[28px] text-center">
               race
@@ -76,7 +76,7 @@ const HowItWorks = () => {
             </p>
         </div>
         <div>
-          <img src={HowItWorksImage3} className=" mx-auto w-[250px]" />
+          <img src={HowItWorksImage3} className=" mx-auto w-[250px] hover:scale-110" />
 
           <h3 className=" font-paladins-straight text-[#FFFF00] text-[20px] 2xl:text-[28px] text-center">
               provably fair
