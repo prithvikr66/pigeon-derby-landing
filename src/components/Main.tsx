@@ -13,6 +13,11 @@ import HowItWorks from "./HowItWorks";
 import Nfts from "./Nfts";
 import Team from "./Team";
 import Footer from "./Footer";
+import EagleGIF from "../assets/images/Eagle.gif";
+import SniperGIF from "../assets/images/Snipe.gif";
+import RocketGIF from "../assets/images/Cannon.gif";
+import ScoreboardGIF from "../assets/images/Score.gif";
+import Backdrop from "../assets/images/BlackBackdrop.png";
 const Main = () => {
   const clickAnimation = {
     scale: 0.9,
@@ -107,7 +112,50 @@ const Main = () => {
         </div>
       </div>
       {/* --------------------------- */}
+      <img className=" w-full lg:h-[100px] xl:h-[150px]  2xl:h-[200px] " src={Backdrop} />
+      {/* --------------------------- */}
 
+      <div className=" hidden lg:block w-full">
+        <div className=" flex justify-between w-full">
+          <div className=" rounded-tl-[96px] w-[25%] h-[400px] xl:h-[500px] 2xl:h-[550px]  overflow-hidden relative ">
+            <img
+              className=" w-full h-full object-cover object-center "
+              src={EagleGIF}
+            />
+            <div className=" absolute inset-0 top-[85%] w-full bg-black h-[15%] uppercase text-white font-advent-bold text-[30px] flex items-center justify-center bg-opacity-70">
+              AMERICAN EAGLE
+            </div>
+          </div>
+          <div className="relative rounded-tl-[96px] w-[25%] h-[400px] xl:h-[500px] 2xl:h-[550px]  mt-[-100px] z-10 overflow-hidden">
+            <img
+              className=" w-full h-full object-cover object-center "
+              src={SniperGIF}
+            />
+            <div className=" absolute inset-0 top-[85%] w-full bg-black h-[15%] uppercase text-white font-advent-bold text-[30px] flex items-center justify-center bg-opacity-90">
+              SNIPERS
+            </div>
+          </div>
+          <div className=" relative w-[25%] h-[300px] xl:h-[400px] 2xl:h-[450px] mt-[100px]  overflow-hidden ">
+            {" "}
+            <img
+              className=" w-full h-full object-cover object-center "
+              src={RocketGIF}
+            />
+            <div className=" absolute inset-0 top-[85%] w-full bg-black h-[15%] uppercase text-white font-advent-bold text-[30px] flex items-center justify-center bg-opacity-50">
+              ROCKET
+            </div>
+          </div>
+          <div className="relative rounded-tl-[96px] w-[25%] h-[400px] xl:h-[500px] 2xl:h-[550px]   mt-[-100px] z-10 overflow-hidden">
+            <img
+              className=" w-full h-full object-cover object-center "
+              src={ScoreboardGIF}
+            />
+            <div className=" absolute inset-0 top-[85%] w-full bg-black h-[15%] uppercase text-white font-advent-bold text-[30px] flex items-center justify-center bg-opacity-50">
+              SCOREBOARD
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* ------------------- */}
       <div className=" flex flex-col gap-[50px]">
