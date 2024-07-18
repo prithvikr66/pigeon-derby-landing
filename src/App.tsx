@@ -4,7 +4,6 @@ import Presale from "./components/Presale";
 import { WalletConnectionProvider } from "./components/WalletConnectionProvider";
 function App() {
   return (
-    <div className=" ">
       <WalletConnectionProvider>
         <BrowserRouter>
           <Routes>
@@ -13,7 +12,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </WalletConnectionProvider>
-    </div>
   );
 }
 

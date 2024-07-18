@@ -21,11 +21,15 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import {
   PublicKey,
-  Transaction,
+  // Transaction,
   LAMPORTS_PER_SOL,
-  SystemProgram,
+  // SystemProgram,
 } from "@solana/web3.js";
-import { useWallet, useConnection } from "@solana/wallet-adapter-react";
+import {  useConnection } from "@solana/wallet-adapter-react";
+// import {
+//   WalletModalButton,
+//   WalletModalProvider,
+// } from "@solana/wallet-adapter-react-ui";
 // import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 const TREASURY_WALLET_ADDRESS = "";
@@ -35,8 +39,8 @@ const Presale = () => {
   >(0);
 
   const { connection } = useConnection();
-  const { publicKey, sendTransaction } = useWallet();
-  const [balance, setBalance] = useState(0);
+  // const { publicKey, sendTransaction } = useWallet();
+  const [, setBalance] = useState(0);
 
   useEffect(() => {
     const fetchBalance = async () => {
@@ -49,20 +53,20 @@ const Presale = () => {
     fetchBalance();
   }, [connection]);
 
-  const handleTransaction = async () => {
-    if (!publicKey) {
-      alert("Please connect your wallet!");
-      return;
-    }
-    const transaction = new Transaction().add(
-      SystemProgram.transfer({
-        fromPubkey: publicKey,
-        toPubkey: new PublicKey(TREASURY_WALLET_ADDRESS),
-        lamports: Number(selectedSolAmount) * LAMPORTS_PER_SOL,
-      })
-    );
-    await sendTransaction(transaction, connection);
-  };
+  // const handleTransaction = async () => {
+  //   if (!publicKey) {
+  //     alert("Please connect your wallet!");
+  //     return;
+  //   }
+  //   const transaction = new Transaction().add(
+  //     SystemProgram.transfer({
+  //       fromPubkey: publicKey,
+  //       toPubkey: new PublicKey(TREASURY_WALLET_ADDRESS),
+  //       lamports: Number(selectedSolAmount) * LAMPORTS_PER_SOL,
+  //     })
+  //   );
+  //   await sendTransaction(transaction, connection);
+  // };
 
   return (
     <div className=" bg-black min-h-screen">
@@ -179,7 +183,21 @@ const Presale = () => {
                           </div>
                         </div>
 
-                        <div className=" w-[36%]  bg-[#FFFF00] text-[#3D3D3D] uppercase text-[16px]  xl:text-[18px] text-center font-advent-bold rounded-tl-[8px] rounded-br-[8px] p-[10px] xl:p-[10px] cursor-pointer">
+                        <div
+                          style={{
+                            width: "36%",
+                            backgroundColor: "#FFFF00",
+                            color: "#3D3D3D",
+                            textTransform: "uppercase",
+                            fontSize: "16px",
+                            textAlign: "center",
+                            fontFamily: "Advent-Pro-Bold",
+                            borderTopLeftRadius: "8px",
+                            borderBottomRightRadius: "8px",
+                            padding: "10px",
+                            cursor: "pointer",
+                          }}
+                        >
                           connect wallet
                         </div>
                       </div>
