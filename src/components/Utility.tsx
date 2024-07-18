@@ -38,13 +38,12 @@ const Utility = () => {
           <div className=" w-[80%] mx-auto lg:mx-0 lg:w-[18%]">
             <div className=" relative lg:bottom-[70px]">
               <div className="  bg-[#00F0FF] h-[280px] ml-[-5px] relative top-[55px] w-[99%] -z-0" />
-
               <img
                 src={Utility2Image}
-                className=" absolute inset-0 sm:mx-auto lg:mx-0  hidden lg:block hover:scale-110 h-[330px] w-[300px] z-50"
+                className=" absolute inset-0 sm:mx-auto lg:mx-0    hover:scale-110 h-[330px] w-[300px] z-50"
               />
             </div>
-            <div className=" flex items-center gap-2 uppercase text-[#FFFF00] font-advent-bold text-[24px] sm:text-center lg:text-left ">
+            <div className=" mt-[70px] lg:mt-0 flex items-center gap-2 uppercase text-[#FFFF00] font-advent-bold text-[24px] sm:text-center lg:text-left ">
               race <RaceIcon />
             </div>
             <p className=" font-advent-semibold uppercase text-white text-[20px] sm:text-center lg:text-left">
@@ -56,15 +55,15 @@ const Utility = () => {
             </p>
           </div>
           <div className=" w-[80%] mx-auto lg:mx-0 lg:w-[18%] ">
-            <div className=" relative">
-              <div className="lg:hidden  bg-[#00F0FF] h-[280px] ml-[-5px] relative top-[55px] w-[99%] -z-0" />
+            <div className=" relative lg:bottom-[70px]">
+              <div className=" lg:hidden bg-[#00F0FF] h-[280px] ml-[-5px] relative top-[55px] w-[99%] -z-0" />
               <img
                 src={Utility3Image}
-                className=" absolute inset-0 sm:mx-auto lg:mx-0 lg:hidden  hover:scale-110 h-[390px] w-auto"
+                className=" absolute inset-0 sm:mx-auto lg:mx-0 lg:hidden  hover:scale-110 h-[330px] w-[300px] z-50"
               />
             </div>
 
-            <div className=" flex items-center gap-2 uppercase text-[#FFFF00] font-advent-bold text-[24px] sm:text-center lg:text-left ">
+            <div className="mt-[70px] lg:mt-0 flex items-center gap-2 uppercase text-[#FFFF00] font-advent-bold text-[24px] sm:text-center lg:text-left ">
               Love shack <LoveShackIcon />
             </div>
             <p className=" font-advent-semibold uppercase text-white text-[20px] sm:text-center lg:text-left">
@@ -73,7 +72,7 @@ const Utility = () => {
               every lottery ticket sold..
             </p>
             <div className=" relative">
-              <div className="  bg-[#00F0FF] h-[280px] ml-[-5px] relative top-[55px] w-[99%] -z-0" />
+              <div className=" hidden lg:block bg-[#00F0FF] h-[280px] ml-[-5px] relative top-[55px] w-[99%] -z-0" />
 
               <img
                 src={Utility3Image}
@@ -88,10 +87,10 @@ const Utility = () => {
 
               <img
                 src={Utility4Image}
-                className=" absolute inset-0 sm:mx-auto lg:mx-0  hidden lg:block hover:scale-110 h-[330px] w-[300px] z-50"
+                className=" absolute inset-0 sm:mx-auto lg:mx-0  hover:scale-110 h-[330px] w-[300px] z-50"
               />
             </div>
-            <div className=" flex items-center gap-2 uppercase text-[#FFFF00] font-advent-bold text-[24px]  sm:text-center lg:text-left">
+            <div className="mt-[70px] lg:mt-0 flex items-center gap-2 uppercase text-[#FFFF00] font-advent-bold text-[24px]  sm:text-center lg:text-left">
               Burn <BurnIcon />
             </div>
             <p className=" font-advent-semibold uppercase text-white text-[20px] sm:text-center lg:text-left">
