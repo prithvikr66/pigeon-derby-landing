@@ -18,6 +18,7 @@ import LandingImage from "../assets/images/LandingImage.png";
 import BackdropImage from "../assets/images/BlackBackdrop.png";
 import RaiseInfoImage from "../assets/images/RaiseInfo.svg";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 const Presale = () => {
   const [selectedSolAmount, setSelectedSolAmount] = useState<
     number | string | undefined
@@ -25,6 +26,7 @@ const Presale = () => {
   const [solAmount, setSolAmount] = useState<number | string>("");
   return (
     <div className=" bg-black min-h-screen">
+      <Navbar />
       <div className=" hidden lg:block relative w-[90%] xl:w-[85%] mx-auto">
         <img src={PresaleMainImage} className=" w-full h-auto " />
         <div className=" absolute inset-0  top-[8%] left-[7%] mt-[30px]">
@@ -238,29 +240,16 @@ const Presale = () => {
           </div>
         </div>
       </div>
+      <div className=" hidden lg:block">
         <Footer />
+      </div>
+
       {/* --------------------------------------------------------- */}
       <div className=" lg:hidden w-full">
         <div className=" ">
           <img src={LandingImage} className=" w-full h-auto" />
         </div>
-        <div className=" lg:hidden profile  w-[90%] mx-auto uppercase mt-[30px]">
-          <div className=" bg-[#3D3D3D] p-[10px] text-[24px] text-white flex items-center justify-center font-advent-bold gap-2">
-            {/* {publicKey ? (
-              <>
-                <div className=" rounded-full h-[15px] w-[15px] bg-[#FFFF00] " />
-                <span>
-                  {publicKey &&
-                    `${publicKey!.toString().slice(0, 6)}......${publicKey!
-                      .toString()
-                      .slice(publicKey!.toString().length - 6)}`}
-                </span>
-              </>
-            ) : (
-              <p>connect Wallet</p>
-            )} */}
-          </div>
-        </div>
+        <div className=" lg:hidden profile  w-[90%] mx-auto uppercase mt-[30px]"></div>
         <div className=" flex justify-center gap-[30px] uppercase w-[90%] mx-auto mt-[30px]">
           <Link to={"/"}>
             <p
@@ -385,7 +374,7 @@ const Presale = () => {
 
           <div className=" mt-[30px]">
             <div className=" flex gap-[10px] items-center text-white uppercase font-advent-semibold text-[18px]">
-              <div className=" w-[90px] ">
+              <div className=" w-[60px] ">
                 <PresaleDiamonIcon />
               </div>
               <p>
@@ -394,7 +383,7 @@ const Presale = () => {
               </p>
             </div>
             <div className=" mt-[10px] flex gap-[10px] items-center text-white uppercase font-advent-semibold text-[18px]">
-              <div className=" w-[80px] ">
+              <div className=" w-[50px] ">
                 <PresaleDiamonIcon />
               </div>
               <p>instant token unlock at tge - straight to your wallet</p>
