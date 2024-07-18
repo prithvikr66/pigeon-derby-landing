@@ -21,26 +21,28 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import {
   PublicKey,
-  // Transaction,
+  Transaction,
   LAMPORTS_PER_SOL,
-  // SystemProgram,
+  SystemProgram,
 } from "@solana/web3.js";
-import {  useConnection } from "@solana/wallet-adapter-react";
-// import {
-//   WalletModalButton,
-//   WalletModalProvider,
-// } from "@solana/wallet-adapter-react-ui";
-// import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { useConnection } from "@solana/wallet-adapter-react";
+import {
+  WalletModalProvider,
+} from "@solana/wallet-adapter-react-ui";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import("@solana/wallet-adapter-react-ui/styles.css");
 
-const TREASURY_WALLET_ADDRESS = "";
+const TREASURY_WALLET_ADDRESS = "9UTvty36JTVdb51t6dFZtK2imJAbivUF1WLBnXH3YsFL";
 const Presale = () => {
   const [selectedSolAmount, setSelectedSolAmount] = useState<
     number | string | undefined
   >(0);
 
   const { connection } = useConnection();
-  // const { publicKey, sendTransaction } = useWallet();
-  const [, setBalance] = useState(0);
+  const { publicKey, sendTransaction } = useWallet();
+  const [balance, setBalance] = useState(0);
+  const [showRangeError, setShowRangeError] = useState(false);
 
   useEffect(() => {
     const fetchBalance = async () => {
@@ -53,20 +55,34 @@ const Presale = () => {
     fetchBalance();
   }, [connection]);
 
-  // const handleTransaction = async () => {
-  //   if (!publicKey) {
-  //     alert("Please connect your wallet!");
-  //     return;
-  //   }
-  //   const transaction = new Transaction().add(
-  //     SystemProgram.transfer({
-  //       fromPubkey: publicKey,
-  //       toPubkey: new PublicKey(TREASURY_WALLET_ADDRESS),
-  //       lamports: Number(selectedSolAmount) * LAMPORTS_PER_SOL,
-  //     })
-  //   );
-  //   await sendTransaction(transaction, connection);
-  // };
+  const handleTransaction = async () => {
+    if (!publicKey) {
+      alert("Please connect your wallet!");
+      return;
+    }
+
+    if (selectedSolAmount) {
+      if (
+        Number(selectedSolAmount) > 20 ||
+        Number(selectedSolAmount) < 1 ||
+        !selectedSolAmount ||
+        selectedSolAmount === undefined
+      ) {
+        setShowRangeError(true);
+        setTimeout(() => {
+          setShowRangeError(false);
+        }, 10000);
+      }
+    }
+    const transaction = new Transaction().add(
+      SystemProgram.transfer({
+        fromPubkey: publicKey,
+        toPubkey: new PublicKey(TREASURY_WALLET_ADDRESS),
+        lamports: Number(selectedSolAmount) * LAMPORTS_PER_SOL,
+      })
+    );
+    await sendTransaction(transaction, connection);
+  };
 
   return (
     <div className=" bg-black min-h-screen">
@@ -141,14 +157,19 @@ const Presale = () => {
                 />
                 <div className=" uppercase text-white text-[20px] font-advent-bold flex items-center gap-2">
                   <img src={SolanaIcon} />
-                  23 sol
+                  40 sol
                 </div>
               </div>
               <div className="w-[80%] mx-auto h-[20px] bg-[#ffffff] shadow-lg shadow-[#02AFBA] rounded-[200px]">
-                <div className="h-full bg-[#FFFF00] rounded-[200px] w-[30%]" />
+                <div
+                  className="h-full bg-[#FFFF00] rounded-[200px] "
+                  style={{ width: `${(balance / 23) * 100}%` }}
+                />
               </div>
               <div className="  mx-auto w-[80%]   flex items-center font-advent-bold  text-[20px] uppercase text-[#FFFF00]">
-                <div className=" w-[30%]   text-right">50%</div>
+                <div className=" w-[30%]   text-right">
+                  {Math.ceil((balance / 23) * 100)} %
+                </div>
               </div>
               <div className=" w-[80%]  mx-auto flex items-center">
                 <div className=" w-[80%] flex flex-col gap-[10px]  ">
@@ -183,25 +204,52 @@ const Presale = () => {
                           </div>
                         </div>
 
-                        <div
-                          style={{
-                            width: "36%",
-                            backgroundColor: "#FFFF00",
-                            color: "#3D3D3D",
-                            textTransform: "uppercase",
-                            fontSize: "16px",
-                            textAlign: "center",
-                            fontFamily: "Advent-Pro-Bold",
-                            borderTopLeftRadius: "8px",
-                            borderBottomRightRadius: "8px",
-                            padding: "10px",
-                            cursor: "pointer",
-                          }}
-                        >
-                          connect wallet
-                        </div>
+                        {publicKey ? (
+                          <div
+                            className=" cursor-pointer"
+                            onClick={handleTransaction}
+                            style={{
+                              backgroundColor: "#FFFF00",
+                              color: "#3D3D3D",
+                              textTransform: "uppercase",
+                              fontSize: "16px",
+                              textAlign: "center",
+                              fontFamily: "Advent-Pro-Bold",
+                              borderTopLeftRadius: "8px",
+                              borderBottomRightRadius: "8px",
+                              padding: "10px",
+                              cursor: "pointer",
+                            }}
+                          >
+                            buy presale
+                          </div>
+                        ) : (
+                          <WalletModalProvider>
+                            <WalletMultiButton
+                              style={{
+                                backgroundColor: "#FFFF00",
+                                color: "#3D3D3D",
+                                textTransform: "uppercase",
+                                fontSize: "16px",
+                                textAlign: "center",
+                                fontFamily: "Advent-Pro-Bold",
+                                borderTopLeftRadius: "8px",
+                                borderBottomRightRadius: "8px",
+                                padding: "10px",
+                                cursor: "pointer",
+                              }}
+                            >
+                              Connect Wallet
+                            </WalletMultiButton>
+                          </WalletModalProvider>
+                        )}
                       </div>
                     </div>
+                    {showRangeError && (
+                      <p className="text-[16px] font-advent-semibold uppercase text-[#F01E31] w-[95%] mt-[10px] mx-auto">
+                        Enter amount between 1 and 20
+                      </p>
+                    )}
                     <div className=" ">
                       <div className=" w-[90%] xl:w-[65%] ml-[15px] mt-[10px] xl:mt-[20px] 2xl:mt-[30px] flex items-center justify-between">
                         <div
