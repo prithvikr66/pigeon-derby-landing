@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "swiper/swiper-bundle.min.css";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 .main-bg {
   background-image: url("../src/assets/images/MainBG.png");
 }
-@import "swiper/swiper-bundle.min.css";
-
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
 
 @font-face {
   font-family: "Advent-Pro-Bold";
@@ -34,4 +34,8 @@
 
 .slider-card {
   clip-path: polygon(14% 0%, 77% 0%, 100% 23%, 100% 100%, 13% 100%);
+}
+
+.gray-image {
+  filter: grayscale(100%);
 }

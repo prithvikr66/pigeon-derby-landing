@@ -1,9 +1,16 @@
 import Utility1Image from "../assets/images/Utility1.png";
-import Utility2Image from "../assets/images/Utility2.png";
-import Utility3Image from "../assets/images/Utility3.png";
-import Utility4Image from "../assets/images/Utility4.png";
+import Utility2Image from "../assets/images/Utility2.gif";
+import Utility3Image from "../assets/images/Utility3.gif";
+import Utility4Image from "../assets/images/Utility4.gif";
 import AppImage from "../assets/images/App.png";
-import { BurnIcon, LoveShackIcon, MobileGameIcon, RaceIcon, UtilityHeadingIcon, UtilityHeadingIconSmall } from "./Icons";
+import {
+  BurnIcon,
+  LoveShackIcon,
+  MobileGameIcon,
+  RaceIcon,
+  UtilityHeadingIcon,
+  UtilityHeadingIconSmall,
+} from "./Icons";
 import MikeImage from "../assets/images/MikeImage.png";
 import GooglePlayImage from "../assets/images/GooglePlay.png";
 import AppstoreImage from "../assets/images/AppStore.png";
@@ -29,10 +36,14 @@ const Utility = () => {
           </div>
 
           <div className=" w-[80%] mx-auto lg:mx-0 lg:w-[18%]">
-            <img
-              src={Utility2Image}
-              className="sm:mx-auto lg:mx-0 hover:scale-110 "
-            />
+            <div className=" relative lg:bottom-[70px]">
+              <div className="  bg-[#00F0FF] h-[280px] ml-[-5px] relative top-[55px] w-[99%] -z-0" />
+
+              <img
+                src={Utility2Image}
+                className=" absolute inset-0 sm:mx-auto lg:mx-0  hidden lg:block hover:scale-110 h-[330px] w-[300px] z-50"
+              />
+            </div>
             <div className=" flex items-center gap-2 uppercase text-[#FFFF00] font-advent-bold text-[24px] sm:text-center lg:text-left ">
               race <RaceIcon />
             </div>
@@ -45,32 +56,43 @@ const Utility = () => {
             </p>
           </div>
           <div className=" w-[80%] mx-auto lg:mx-0 lg:w-[18%] ">
-            <img
-              src={Utility3Image}
-              className="sm:mx-auto lg:mx-0 lg:hidden  hover:scale-110"
-            />
+            <div className=" relative">
+              <div className="lg:hidden  bg-[#00F0FF] h-[280px] ml-[-5px] relative top-[55px] w-[99%] -z-0" />
+              <img
+                src={Utility3Image}
+                className=" absolute inset-0 sm:mx-auto lg:mx-0 lg:hidden  hover:scale-110 h-[390px] w-auto"
+              />
+            </div>
 
             <div className=" flex items-center gap-2 uppercase text-[#FFFF00] font-advent-bold text-[24px] sm:text-center lg:text-left ">
-              Love shack <LoveShackIcon/>
+              Love shack <LoveShackIcon />
             </div>
             <p className=" font-advent-semibold uppercase text-white text-[20px] sm:text-center lg:text-left">
               <span className=" text-[#F01E31]">Stake $Race</span> and be
               eligible for passive income. we make revenue by taking a 1% fee on
               every lottery ticket sold..
             </p>
-            <img
-              src={Utility3Image}
-              className="sm:mx-auto lg:mx-0  hidden lg:block hover:scale-110"
-            />
+            <div className=" relative">
+              <div className="  bg-[#00F0FF] h-[280px] ml-[-5px] relative top-[55px] w-[99%] -z-0" />
+
+              <img
+                src={Utility3Image}
+                className=" absolute inset-0 sm:mx-auto lg:mx-0  hidden lg:block hover:scale-110 h-[330px] w-[300px] z-50"
+              />
+            </div>
           </div>
 
           <div className=" w-[80%] mx-auto lg:mx-0 lg:w-[18%]">
-            <img
-              src={Utility4Image}
-              className="sm:mx-auto lg:mx-0 hover:scale-110"
-            />
+            <div className=" relative lg:bottom-[70px]">
+              <div className="  bg-[#00F0FF] h-[280px] ml-[-5px] relative top-[55px] w-[99%] -z-0" />
+
+              <img
+                src={Utility4Image}
+                className=" absolute inset-0 sm:mx-auto lg:mx-0  hidden lg:block hover:scale-110 h-[330px] w-[300px] z-50"
+              />
+            </div>
             <div className=" flex items-center gap-2 uppercase text-[#FFFF00] font-advent-bold text-[24px]  sm:text-center lg:text-left">
-              Burn <BurnIcon/> 
+              Burn <BurnIcon />
             </div>
             <p className=" font-advent-semibold uppercase text-white text-[20px] sm:text-center lg:text-left">
               With each lottery ticket you buy, a small portion of{" "}
@@ -87,7 +109,7 @@ const Utility = () => {
           />
           <div className=" lg:mt-[50px] lg:w-[30%]  ">
             <div className=" flex items-center gap-2 uppercase text-[#FFFF00] font-advent-bold text-[24px] lg:text-[24px]  sm:text-center lg:text-left">
-              mobile game <MobileGameIcon/>
+              mobile game <MobileGameIcon />
             </div>
             <p className=" font-advent-semibold uppercase text-white text-[20px] lg:text-[24px] sm:text-center lg:text-left">
               a unique{" "}

@@ -18,10 +18,10 @@ import SniperGIF from "../assets/images/Snipe.gif";
 import RocketGIF from "../assets/images/Cannon.gif";
 import ScoreboardGIF from "../assets/images/Score.gif";
 import Backdrop from "../assets/images/BlackBackdrop.png";
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   const clickAnimation = {
@@ -38,14 +38,14 @@ const Main = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     centerMode: true,
-    centerPadding: '0',
+    centerPadding: "0",
   };
 
   const slides = [
-    { image: EagleGIF, title: 'AMERICAN EAGLE' },
-    { image: SniperGIF, title: 'SNIPERS' },
-    { image: RocketGIF, title: 'ROCKET' },
-    { image: ScoreboardGIF, title: 'SCOREBOARD' },
+    { image: EagleGIF, title: "AMERICAN EAGLE" },
+    { image: SniperGIF, title: "SNIPERS" },
+    { image: RocketGIF, title: "ROCKET" },
+    { image: ScoreboardGIF, title: "SCOREBOARD" },
   ];
 
   return (
@@ -64,17 +64,15 @@ const Main = () => {
           </div>
 
           <div className=" lg:flex  items-center  gap-[80px] hidden   ">
-            <motion.button
-              className=" cursor-pointer mt-[-10px] hover:scale-110 "
-            >
+            <motion.button className=" cursor-pointer mt-[-10px] hover:scale-110 ">
               <PlayNowButtonIcon />
             </motion.button>
 
-            <motion.button
-              className=" cursor-pointer mt-[0px]"
-            >
-              <GetPresaleIcon />
-            </motion.button>
+            <Link to={"/presale"}>
+              <motion.button className=" cursor-pointer mt-[0px]">
+                <GetPresaleIcon />
+              </motion.button>
+            </Link>
           </div>
 
           <div className=" lg:flex items-center  w-[70%] mt-[50px] hidden">
@@ -107,18 +105,25 @@ const Main = () => {
         >
           <PlayNowButtonIconSmall />
         </motion.button>
-        <motion.button
-          className=" cursor-pointer mt-[0px] hidden sm:block"
-          whileTap={clickAnimation}
-        >
-          <GetPresaleIcon />
-        </motion.button>
-        <motion.button
-          className=" cursor-pointer mt-[10px] sm:hidden"
-          whileTap={clickAnimation}
-        >
-          <GetPresaleIconSmall />
-        </motion.button>
+        <Link to={"/presale"}>
+          <motion.button
+            onClick={() => console.log("clicked")}
+            className=" cursor-pointer mt-[0px] hidden sm:block"
+            // whileTap={clickAnimation}
+          >
+            <div onClick={() => console.log("div clicked")}>
+              <GetPresaleIcon />
+            </div>
+          </motion.button>
+        </Link>
+        <Link to={"/presale"}>
+          <motion.button
+            className=" cursor-pointer mt-[10px] sm:hidden"
+            whileTap={clickAnimation}
+          >
+            <GetPresaleIconSmall />
+          </motion.button>
+        </Link>
 
         <div>
           <img src={MikeTysonImage} />
@@ -183,22 +188,22 @@ const Main = () => {
       </div>
 
       <div className="  lg:hidden w-full">
-      <Slider {...settings} className="w-full ">
-        {slides.map((slide, index) => (
-          <div key={index} className="slider-card w-[60%] px-[50px] sm:w-[300px]">
-            <div className="relative h-[400px]">
-              <img
-                className="w-full h-full object-cover object-center"
-                src={slide.image}
-              />
-              <div className="absolute inset-x-0 bottom-0 h-[15%] bg-black bg-opacity-90 uppercase text-white font-advent-bold text-[30px] flex items-center justify-center">
-                {slide.title}
+        <Slider {...settings} className="w-full ">
+          {slides.map((slide, index) => (
+            <div key={index} className="slider-card sm:w-[300px]">
+              <div className="relative h-[400px]">
+                <img
+                  className="w-full h-full object-cover object-center"
+                  src={slide.image}
+                />
+                <div className="absolute inset-x-0 bottom-0 h-[15%] bg-black bg-opacity-90 uppercase text-white font-advent-bold text-[30px] flex items-center justify-center">
+                  {slide.title}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
+          ))}
+        </Slider>
+      </div>
 
       {/* ------------------- */}
       <div className=" flex flex-col gap-[50px]">
