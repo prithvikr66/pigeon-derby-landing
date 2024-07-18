@@ -11,7 +11,7 @@ import {
 import SolAmountSVG from "../assets/images/SolAmount.svg";
 import SolanaIcon from "../assets/images/SolanaIcon.svg";
 import MikeMoneyImage from "../assets/images/MikeMoney.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CashImage from "../assets/images/CashImage.png";
 import { Link } from "react-router-dom";
 import LandingImage from "../assets/images/LandingImage.png";
@@ -19,11 +19,51 @@ import BackdropImage from "../assets/images/BlackBackdrop.png";
 import RaiseInfoImage from "../assets/images/RaiseInfo.svg";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import {
+  PublicKey,
+  Transaction,
+  LAMPORTS_PER_SOL,
+  SystemProgram,
+} from "@solana/web3.js";
+import { useWallet, useConnection } from "@solana/wallet-adapter-react";
+// import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+
+const TREASURY_WALLET_ADDRESS = "";
 const Presale = () => {
   const [selectedSolAmount, setSelectedSolAmount] = useState<
     number | string | undefined
   >(0);
-  const [solAmount, setSolAmount] = useState<number | string>("");
+
+  const { connection } = useConnection();
+  const { publicKey, sendTransaction } = useWallet();
+  const [balance, setBalance] = useState(0);
+
+  useEffect(() => {
+    const fetchBalance = async () => {
+      if (connection && TREASURY_WALLET_ADDRESS) {
+        const walletPublicKey = new PublicKey(TREASURY_WALLET_ADDRESS);
+        const balance = await connection.getBalance(walletPublicKey);
+        setBalance(balance / LAMPORTS_PER_SOL);
+      }
+    };
+    fetchBalance();
+  }, [connection]);
+
+  const handleTransaction = async () => {
+    if (!publicKey) {
+      alert("Please connect your wallet!");
+      return;
+    }
+    const transaction = new Transaction().add(
+      SystemProgram.transfer({
+        fromPubkey: publicKey,
+        toPubkey: new PublicKey(TREASURY_WALLET_ADDRESS),
+        lamports: Number(selectedSolAmount) * LAMPORTS_PER_SOL,
+      })
+    );
+    await sendTransaction(transaction, connection);
+  };
+
   return (
     <div className=" bg-black min-h-screen">
       <Navbar />
@@ -129,7 +169,9 @@ const Presale = () => {
                             <input
                               type="text"
                               value={selectedSolAmount}
-                              onChange={(e) => setSolAmount(e.target.value)}
+                              onChange={(e) =>
+                                setSelectedSolAmount(e.target.value)
+                              }
                               placeholder="sol amount"
                               className="uppercase text-[#B7B70A] text-[16px] font-advent-bold bg-transparent border-none outline-none pl-[2.5rem] w-full"
                               style={{ paddingLeft: "calc(10% + 2rem)" }}

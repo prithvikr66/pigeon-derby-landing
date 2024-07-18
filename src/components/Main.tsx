@@ -30,7 +30,7 @@ const Main = () => {
   };
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -39,6 +39,7 @@ const Main = () => {
     autoplaySpeed: 2000,
     centerMode: true,
     centerPadding: "0",
+    arrows: false,
   };
 
   const slides = [
@@ -188,7 +189,7 @@ const Main = () => {
       </div>
 
       <div className="  lg:hidden w-full">
-        <Slider {...settings} className="w-full ">
+        <Slider {...settings} className="w-[90%]  ">
           {slides.map((slide, index) => (
             <div key={index} className="slider-card sm:w-[300px]">
               <div className="relative h-[400px]">
