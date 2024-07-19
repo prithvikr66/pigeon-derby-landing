@@ -1,11 +1,6 @@
 import PresaleMainImage from "../assets/images/PresaleMain.png";
 import {
   PresaleDiamonIcon,
-  ProgressIcon1,
-  ProgressIcon2,
-  ProgressIcon3,
-  ProgressIcon4,
-  ProgressIcon5,
   TargetIcon,
 } from "./Icons";
 import SolAmountSVG from "../assets/images/SolAmount.svg";
@@ -73,7 +68,6 @@ const Presale = () => {
     }
 
     if (selectedSolAmount != undefined) {
-
       if (
         Number(selectedSolAmount) > 20 ||
         Number(selectedSolAmount) < 1 ||
@@ -109,61 +103,65 @@ const Presale = () => {
       <Navbar />
       <div className=" hidden lg:block relative w-[90%] xl:w-[85%] mx-auto">
         <img src={PresaleMainImage} className=" w-full h-auto " />
-        <div className=" absolute inset-0  top-[8%] left-[7%] mt-[30px]">
+        <div className=" absolute inset-0  top-[6%] left-[7%] mt-[20px]">
           <div className=" flex justify-between">
             <div className=" uppercase w-[20%]   ">
               <TargetIcon />
               <p className=" text-[#FFFF00] text-[24px] font-advent-bold mt-[10px]">
                 Raise info
               </p>
-              <div className=" flex flex-col gap-[10px] xl:gap-[15px] 2xl:gap-[25px] mt-[30px]">
+              <div className=" flex flex-col gap-[5px] xl:gap-[10px] 2xl:gap-[15px] 2xl:mt-[30px]">
                 <div className=" w-full justify-between flex items-center font-advent-regular text-white text-[20px]">
-                  <div className=" flex gap-2 items-center">
-                    <ProgressIcon1 />
-                    public sale
-                  </div>
-                  <p className=" font-advent-semibold text-[#FFFF00] text-[24px]">
-                    100%
-                  </p>
-                </div>
-                <div className=" w-full h-[1px] bg-gradient-to-r from-[#FFFF00] to-black" />
-                <div className=" w-full justify-between flex items-center font-advent-regular text-white text-[20px]">
-                  <div className=" flex gap-2 items-center">
-                    <ProgressIcon2 />
-                    lp
-                  </div>
-                  <p className=" font-advent-semibold text-[#FFFF00] text-[24px]">
-                    30%
-                  </p>
-                </div>
-                <div className=" w-full h-[1px] bg-gradient-to-r from-[#FFFF00] to-black" />
-                <div className=" w-full justify-between flex items-center font-advent-regular text-white text-[20px]">
-                  <div className=" flex gap-2 items-center">
-                    <ProgressIcon3 />
-                    marketing
-                  </div>
+                  <div className=" flex gap-2 items-center">private round</div>
                   <p className=" font-advent-semibold text-[#FFFF00] text-[24px]">
                     10%
                   </p>
                 </div>
                 <div className=" w-full h-[1px] bg-gradient-to-r from-[#FFFF00] to-black" />
+
                 <div className=" w-full justify-between flex items-center font-advent-regular text-white text-[20px]">
-                  <div className=" flex gap-2 items-center">
-                    <ProgressIcon4 />
-                    utility/build
-                  </div>
+                  <div className=" flex gap-2 items-center">public round</div>
                   <p className=" font-advent-semibold text-[#FFFF00] text-[24px]">
-                    5%
+                    15%
+                  </p>
+                </div>
+                <div className=" w-full h-[1px] bg-gradient-to-r from-[#FFFF00] to-black" />
+
+                <div className=" w-full justify-between flex items-center font-advent-regular text-white text-[20px]">
+                  <div className=" flex gap-2 items-center">lp</div>
+                  <p className=" font-advent-semibold text-[#FFFF00] text-[24px]">
+                    20%
                   </p>
                 </div>
                 <div className=" w-full h-[1px] bg-gradient-to-r from-[#FFFF00] to-black" />
                 <div className=" w-full justify-between flex items-center font-advent-regular text-white text-[20px]">
+                  <div className=" flex gap-2 items-center">marketing</div>
+                  <p className=" font-advent-semibold text-[#FFFF00] text-[24px]">
+                    10%
+                  </p>
+                </div>
+                <div className=" w-full h-[1px] bg-gradient-to-r from-[#FFFF00] to-black" />
+
+                <div className=" w-full justify-between flex items-center font-advent-regular text-white text-[20px]">
                   <div className=" flex gap-2 items-center">
-                    <ProgressIcon5 />
-                    cex (tier 1)
+                    incentives fund
                   </div>
                   <p className=" font-advent-semibold text-[#FFFF00] text-[24px]">
-                    5%
+                    20%
+                  </p>
+                </div>
+                <div className=" w-full h-[1px] bg-gradient-to-r from-[#FFFF00] to-black" />
+                <div className=" w-full justify-between flex items-center font-advent-regular text-white text-[20px]">
+                  <div className=" flex gap-2 items-center">team</div>
+                  <p className=" font-advent-semibold text-[#FFFF00] text-[24px]">
+                    4%
+                  </p>
+                </div>
+                <div className=" w-full h-[1px] bg-gradient-to-r from-[#FFFF00] to-black" />
+                <div className=" w-full justify-between flex items-center font-advent-regular text-white text-[20px]">
+                  <div className=" flex gap-2 items-center">development</div>
+                  <p className=" font-advent-semibold text-[#FFFF00] text-[24px]">
+                    16%
                   </p>
                 </div>
               </div>
