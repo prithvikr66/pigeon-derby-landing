@@ -22,8 +22,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-
+import ReactTypingEffect from "react-typing-effect";
 const Main = () => {
+ 
+
   const clickAnimation = {
     scale: 0.9,
     transition: { type: "spring", stiffness: 400, damping: 10 },
@@ -59,9 +61,26 @@ const Main = () => {
         {/* ------------------- */}
         <div className=" w-[80%] mx-auto  absolute inset-0 flex flex-col mt-[60px] justify-end items-center lg:items-start lg:justify-normal ">
           <img src={WebsiteLogo} className=" w-[100px] h-auto" />
-          <div className=" text-[36px] lg:text-[96px] font-paladins-condensed lg:mt-[-20px]">
-            <h2 className=" text-[#F01E31] ">pigeon</h2>
-            <h2 className=" text-white mt-[-20px] lg:mt-[-60px] ">derby</h2>
+          <div className="text-[36px] lg:text-[96px] font-paladins-condensed lg:mt-[-20px]">
+            <div>
+              <ReactTypingEffect
+                text={["pigeon"]}
+                speed={100}
+                typingDelay={500}
+                eraseDelay={1000000}
+                cursor={" "}
+                className=" text-[#F01E31]"
+              />
+            </div>
+            <div className="text-white mt-[-20px] lg:mt-[-60px]">
+              <ReactTypingEffect
+                text={["derby"]}
+                speed={100}
+                typingDelay={2000}
+                eraseDelay={1000000}
+                cursor={" "}
+              />
+            </div>
           </div>
 
           <div className=" lg:flex  items-center  gap-[80px] hidden   ">

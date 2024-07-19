@@ -11,8 +11,8 @@ const Footer = () => {
   const DEXTOOLS_URL = "";
   const SOLSCAN_URL = "";
   const JUPITER_URL = "";
-  const TWITTER_URL = "";
-  const TELEGRAM_URL = "";
+  const TWITTER_URL = "https://x.com/Pigeonderby ";
+  const TELEGRAM_URL = "t.me/PigeonDerby ";
 
   return (
     <div>

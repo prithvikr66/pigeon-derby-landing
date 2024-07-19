@@ -17,7 +17,7 @@ import AppstoreImage from "../assets/images/AppStore.png";
 
 const Utility = () => {
   return (
-    <div className=" mt-[50px] bg-black pb-[50px]">
+    <div className="  bg-black pb-[50px] lg:pb-0">
       <div>
         <div className=" w-[85%] mx-auto hidden lg:block">
           <UtilityHeadingIcon />
