@@ -1,10 +1,13 @@
-import BackgroundImageMain from "../assets/images/MainBG.png";
+// import BackgroundImageMain from "../assets/images/MainBG.png";
+import BackgroundVideo from "../assets/images/PigeonDerbyVideo.mp4";
 import WebsiteLogo from "../assets/images/Logo.png";
 import {
   GetPresaleIcon,
   GetPresaleIconSmall,
   PlayNowButtonIcon,
   PlayNowButtonIconSmall,
+  PlayVideoIcon,
+  PlayVideoSmallIcon,
 } from "./Icons";
 import MikeTysonImage from "../assets/images/MikeTysonImage.png";
 import { motion } from "framer-motion";
@@ -24,8 +27,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import ReactTypingEffect from "react-typing-effect";
 const Main = () => {
- 
-
   const clickAnimation = {
     scale: 0.9,
     transition: { type: "spring", stiffness: 400, damping: 10 },
@@ -54,10 +55,23 @@ const Main = () => {
   return (
     <div className=" min-h-screen bg-[#111111]">
       <div className=" relative">
-        <img
-          src={BackgroundImageMain}
-          className=" w-full h-auto lg:h-screen object-cover"
+        <video
+          src={BackgroundVideo}
+          className="w-full h-auto lg:h-screen object-cover"
+          autoPlay
+          loop
+          muted
         />
+        <div className=" hidden lg:block absolute inset-0 top-[85%] left-[90%]">
+          <a href="https://www.youtube.com/watch?v=dgJuDPDwdxw" target="_blank">
+            <PlayVideoIcon />
+          </a>
+        </div>
+        <div className="  lg:hidden absolute inset-0 top-[85%] left-[90%]">
+          <a href="https://www.youtube.com/watch?v=dgJuDPDwdxw" target="_blank">
+            <PlayVideoSmallIcon />
+          </a>
+        </div>
         {/* ------------------- */}
         <div className=" w-[80%] mx-auto  absolute inset-0 flex flex-col mt-[60px] justify-end items-center lg:items-start lg:justify-normal ">
           <img src={WebsiteLogo} className=" w-[100px] h-auto" />
