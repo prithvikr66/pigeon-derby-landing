@@ -1,8 +1,5 @@
 import PresaleMainImage from "../assets/images/PresaleMain.png";
-import {
-  PresaleDiamonIcon,
-  TargetIcon,
-} from "./Icons";
+import { PresaleDiamonIcon, TargetIcon } from "./Icons";
 import SolAmountSVG from "../assets/images/SolAmount.svg";
 import SolanaIcon from "../assets/images/SolanaIcon.svg";
 import MikeMoneyImage from "../assets/images/MikeMoney.png";
@@ -19,20 +16,26 @@ import {
   Transaction,
   LAMPORTS_PER_SOL,
   SystemProgram,
+  Connection,
 } from "@solana/web3.js";
 import { useWallet } from "@solana/wallet-adapter-react";
-import { useConnection } from "@solana/wallet-adapter-react";
+// import { useConnection } from "@solana/wallet-adapter-react";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import("@solana/wallet-adapter-react-ui/styles.css");
 
-const TREASURY_WALLET_ADDRESS = "AJgfse7TFXpDpFqD8fNq8KJAsw2Jz7DtEkWTCvdcUXZv";
+// @labsfeelgood swap this for mainent
+// const TREASURY_WALLET_ADDRESS = "AJgfse7TFXpDpFqD8fNq8KJAsw2Jz7DtEkWTCvdcUXZv";
+const TREASURY_WALLET_ADDRESS = "Got4JRmLym3cf7kigh1rpdD4WZrYscy5kBjsrdeHy6rr";
 const Presale = () => {
   const [selectedSolAmount, setSelectedSolAmount] = useState<
     number | string | undefined
   >(0);
 
-  const { connection } = useConnection();
+  // @labsfeelgood swap this for mainent
+  // const { connection } = useConnection();
+  const connection = new Connection(import.meta.env.VITE_RPC_URI);
+
   const { publicKey, sendTransaction } = useWallet();
   const [balance, setBalance] = useState(0);
   const [showRangeError, setShowRangeError] = useState(false);
