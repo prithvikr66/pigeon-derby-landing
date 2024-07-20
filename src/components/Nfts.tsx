@@ -2,8 +2,8 @@ import { NftsIcon, QrCodeIcon } from "./Icons";
 import NFTFrameImage from "../assets/images/NFTFrame.png";
 import NFTCollectionImage from "../assets/images/NFTCollection.png";
 import NFTProgressImage from "../assets/images/NFTProgress.png";
-import PigeonNFT from "../assets/images/PigeonNFT.png";
-import EagleNFT from "../assets/images/EagleNFT.png";
+import PigeonNFT from "../assets/images/PigeonNFT.gif";
+import EagleNFT from "../assets/images/EagleNFT.gif";
 import { useAnimation, motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 const Nfts = () => {
@@ -47,7 +47,7 @@ const Nfts = () => {
         <div className=" w-[70%] mx-auto lg:mx-0 lg:w-[24%] sm:w-[250px]  relative">
           <img src={NFTFrameImage} className=" w-full h-auto" />
           <div className=" absolute inset-0 top-[80px]">
-            <img src={PigeonNFT} className=" w-[70%] mx-auto hover:scale-105" />
+            <img src={PigeonNFT} className=" w-[180px] h-[236px] rounded-[4px] border-[1px]  mx-auto hover:scale-105" />
             <div className=" flex items-end w-[70%] mx-auto justify-between  mt-[20px] ">
               <div>
                 <p className=" font-advent-semibold text-[20px] text-white uppercase">
@@ -97,7 +97,7 @@ const Nfts = () => {
         <div className=" mt-[40px] lg:mt-0 w-[70%] mx-auto lg:mx-0  lg:w-[24%] sm:w-[250px] relative">
           <img src={NFTFrameImage} className=" w-full h-auto" />
           <div className=" absolute inset-0 top-[80px]">
-            <img src={EagleNFT} className=" w-[70%] mx-auto hover:scale-105" />
+            <img src={EagleNFT} className=" w-[180px] h-[236px] rounded-[4px] border-[1px] mx-auto hover:scale-105" />
             <div className=" flex items-end w-[70%] mx-auto justify-between  mt-[20px] ">
               <div>
                 <p className=" font-advent-semibold text-[20px] text-white uppercase">
