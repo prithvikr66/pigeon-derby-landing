@@ -4,7 +4,7 @@ import {
   WalletProvider,
 } from "@solana/wallet-adapter-react";
 import { clusterApiUrl } from "@solana/web3.js";
-import { FC } from "react";
+import { FC } from "react"
 
 type Props = {
   readonly children: React.ReactNode;
